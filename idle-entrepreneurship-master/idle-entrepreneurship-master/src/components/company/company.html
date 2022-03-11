@@ -1,0 +1,10 @@
+<section class="company">
+  <div class="name">{{ company.name }}</div>
+  <div class="money">Money : {{ company.money }}</div>
+  <div class="level">Level : {{ company.level }}</div>
+  <div class="earning">Earning : {{ company.earning() }}</div>
+  <div class="nb-offices">Nb offices : {{ company.offices.length }}</div>
+  <div class="offices">
+    <office v-for="office in company.offices" :office="office" />
+  </div>
+</section>

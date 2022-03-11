@@ -1,0 +1,19 @@
+<section class="office" :class="{'in-market': office.inMarket}">
+  <div class="name">{{ office.name }}</div>
+  <div class="level">Level : {{ office.level }}</div>
+  <div class="earning">Earning : {{ office.earning() }}</div>
+  <div class="payroll">Payroll : {{ office.payroll() }}</div>
+  <div class="profits">Profits : {{ office.profits() }}</div>
+  <div class="nb-employees">Nb employees : {{ office.employees.length }}</div>
+  <div class="employees">
+    <employee v-for="employee in office.employees" :employee="employee"/>
+  </div>
+  <div v-if="office.inMarket">
+    <div class="cost">
+      Cost : {{ office.cost() }}
+    </div>
+    <div class="buy">
+      <button @click="$emit('buy')" :disabled="!canBeBought">{{ canBeBought ? "Buy" : "Not enough money" }}</button>
+    </div>
+  </div>
+</section>

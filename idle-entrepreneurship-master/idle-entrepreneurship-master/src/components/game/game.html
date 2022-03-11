@@ -1,0 +1,18 @@
+<section class="game">
+  <div class="infos">
+    <div class="name">{{ game.player }} - {{ game.name }}</div>
+    <div class="money">Money : {{ game.money }}</div>
+    <div class="earning">Earning : {{ game.earning() }}</div>
+    <div class="payroll">Payroll : {{ game.payroll() }}</div>
+    <div class="profits">Profits : {{ game.profits() }}</div>
+  </div>
+  <div class="companies">
+    <company v-for="company in game.companies" :company="company"/>
+  </div>
+  <market :game="game"/>
+  <div class="game-message">
+    <p>
+      {{ message }}
+    </p>
+  </div>
+</section>

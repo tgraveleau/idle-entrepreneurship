@@ -1,0 +1,6 @@
+<section class="market">
+  <h1>MARKET</h1>
+  <div class="offices">
+    <office v-for="office in offices" :office="office" :canBeBought="game.canBuyOffice(office)" @buy="game.buyOffice(office,company)"/>
+  </div>
+</section>
